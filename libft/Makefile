@@ -6,13 +6,13 @@
 #    By: szicchie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/10 13:43:19 by szicchie          #+#    #+#              #
-#    Updated: 2022/01/10 17:18:54 by szicchie         ###   ########.fr        #
+#    Updated: 2022/01/26 08:24:05 by szicchie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_isalpha.c \
 	  ft_isdigit.c \
-	  ft_isalnem.c \
+	  ft_isalnum.c \
 	  ft_isascii.c \
 	  ft_isprint.c \
 	  ft_strlen.c \
@@ -42,14 +42,13 @@ SRCS = ft_isalpha.c \
 	  ft_putchar_fd.c \
 	  ft_putstr_fd.c \
 	  ft_putendl_fd.c \
-	  ft_putnbr_fd.c \
-	  libft.h \
+	  ft_putnbr_fd.c 
 
 OBJS = $(SRCS:.c=.o)
 
 BONUS  = ft_lstnew.c \
 		ft_lstadd_front.c \
-		ft_ lstsize.c \
+		ft_lstsize.c \
 		ft_lstlast.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
@@ -61,7 +60,7 @@ BONUS_OBJS = $(BONUS:.c=.o)
 
 CC = gcc 
 RM = rm -f 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror 
 
 NAME = libft.a
 

@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szicchie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 17:44:38 by szicchie          #+#    #+#             */
-/*   Updated: 2022/01/26 08:23:06 by szicchie         ###   ########.fr       */
+/*   Created: 2022/01/13 23:27:09 by szicchie          #+#    #+#             */
+/*   Updated: 2022/01/14 00:46:26 by szicchie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

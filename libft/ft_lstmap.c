@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szicchie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 17:44:38 by szicchie          #+#    #+#             */
-/*   Updated: 2022/01/26 08:23:06 by szicchie         ###   ########.fr       */
+/*   Created: 2022/01/25 00:33:31 by szicchie          #+#    #+#             */
+/*   Updated: 2022/01/25 01:25:28 by szicchie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+	t_list	*new_list;
+	t_list	*new_link;
+
+	new_list = NULL;
+	while (lst)
+	{
+		new_link = ft_lstnew(f(lst->content));
+		if (!new_link)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		lst = lst->next;
+		ft_lstadd_back(&new_list, new_link);
+	}
+	return (new_list);
 }
